@@ -13,7 +13,7 @@ public enum StatusCode {
     /**
      * 201 Created: The request has been fulfilled, resulting in the creation of a new resource.
      */
-    CREATED(201, "SUCCESS", "SUCCESS"),
+    CREATED(201, "SUCCESS", "CREATED"),
 
     /**
      * 300 No Data: The request was successful, but no data was found.

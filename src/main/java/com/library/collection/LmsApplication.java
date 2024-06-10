@@ -4,6 +4,9 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Entry point of the LMS application
+ */
 @SpringBootApplication
 @OpenAPIDefinition
 public class LmsApplication {

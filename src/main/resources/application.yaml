@@ -1,5 +1,9 @@
 server:
   port: 8081
+application:
+  title: Library Management System
+  version: 1.0
+
 spring:
   application:
     name: LMS
