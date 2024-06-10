@@ -41,8 +41,8 @@ public class BookEntity {
     @Column(name = "DEPARTMENT")
     private String department;
 
-    @Column(name = "AVAILABILITY", columnDefinition = "boolean default true")
-    private Boolean availability;
+    @Column(name = "AVAILABLE", columnDefinition = "boolean default true")
+    private Boolean available;
 
     @Column(name = "ACTIVE", columnDefinition = "boolean default true")
     private Boolean active;

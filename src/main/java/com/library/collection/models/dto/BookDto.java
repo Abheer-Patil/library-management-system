@@ -23,7 +23,7 @@ public class BookDto {
 
     private String department;
 
-    private Boolean availability;
+    private Boolean available;
 
     private String publicationYear;
 
