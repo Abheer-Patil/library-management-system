@@ -10,6 +10,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+
+/**
+ * Entity class representing a book in the library.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

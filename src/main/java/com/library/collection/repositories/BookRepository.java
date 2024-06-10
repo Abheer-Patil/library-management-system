@@ -13,6 +13,7 @@ public interface BookRepository extends JpaRepository<BookEntity, UUID> {
     List<BookEntity> findBookEntityListByAvailableAndActiveTrue(Boolean available);
 
     BookEntity findBookEntityByBookIdAndActiveTrue(UUID bookId);
+    BookEntity findBookEntityByISBNAndActiveTrue(String ISBN);
 
     List<BookEntity> findBookEntityListByActiveTrue();
 

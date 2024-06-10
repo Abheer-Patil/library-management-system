@@ -14,13 +14,13 @@ public class BaseResponse {
     private String message;
     private Object data;
 
-    BaseResponse(StatusCode statusCode) {
+    public BaseResponse(StatusCode statusCode) {
         this.code = statusCode.getCode();
         this.status = statusCode.getStatus();
         this.message = statusCode.getMessage();
     }
 
-    BaseResponse(Object data, StatusCode statusCode) {
+    public BaseResponse(Object data, StatusCode statusCode) {
         this.code = statusCode.getCode();
         this.status = statusCode.getStatus();
         this.message = statusCode.getMessage();
