@@ -23,7 +23,7 @@ public class LibraryController {
     }
 
     @Operation(summary = "adding book")
-    @PostMapping(path = "/book", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/book")
     public ResponseEntity addBook(@RequestBody BookDto request) {
         try {
             if (ObjectUtils.isEmpty(request) || StringUtils.isEmpty(request.getISBN()) || StringUtils.isEmpty(request.getTitle())) {
@@ -39,8 +39,8 @@ public class LibraryController {
 
 
     @Operation(summary = "Removing book by ISBN")
-    @DeleteMapping(path = "/book", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity addBook(@RequestParam String ISBN) {
+    @DeleteMapping(path = "/book")
+    public ResponseEntity removeBook(@RequestParam String ISBN) {
         try {
             if (StringUtils.isEmpty(ISBN)) {
                 return ResponseEntity.badRequest().build();
@@ -54,13 +54,13 @@ public class LibraryController {
     }
 
     @Operation(summary = "fetching books by title")
-    @GetMapping(path = "/book/title", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/book/title")
     public ResponseEntity getBooksByTitle(@RequestParam String title) {
         try {
             if (StringUtils.isEmpty(title)) {
                 return ResponseEntity.badRequest().build();
             }
-            return ResponseEntity.ok(libraryService.removeBookByISBN(title));
+            return ResponseEntity.ok(libraryService.getBookByTitle(title));
         } catch (Exception e) {
             log.error("error in fetching book, request -> : {}", title);
             log.error("error in fetching book : {}", e);
@@ -70,13 +70,13 @@ public class LibraryController {
 
 
     @Operation(summary = "fetch books by author")
-    @GetMapping(path = "/book/author", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/book/author")
     public ResponseEntity getBooksByAuthor(@RequestParam String author) {
         try {
             if (StringUtils.isEmpty(author)) {
                 return ResponseEntity.badRequest().build();
             }
-            return ResponseEntity.ok(libraryService.removeBookByISBN(author));
+            return ResponseEntity.ok(libraryService.getBookByAuthor(author));
         } catch (Exception e) {
             log.error("error in fetching book, request -> : {}", author);
             log.error("error in fetching book : {}", e);
@@ -85,7 +85,7 @@ public class LibraryController {
     }
 
     @Operation(summary = "fetch all books")
-    @GetMapping(path = "/books", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/books")
     public ResponseEntity getAllBooks() {
         try {
             return ResponseEntity.ok(libraryService.listAllBooks());
@@ -96,7 +96,7 @@ public class LibraryController {
     }
 
     @Operation(summary = "fetch available books")
-    @GetMapping(path = "/books/available", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/books/available")
     public ResponseEntity getAllAvailableBooks() {
         try {
             return ResponseEntity.ok(libraryService.listAvailableBooks());
