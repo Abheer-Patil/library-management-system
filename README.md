@@ -45,8 +45,8 @@ Technologies used : Java, Spring boot, Hibernate and postgresQL
 
 # How to use
 
-Just clone the repository, make sure to create database and run the application
-(entry point of application : LmsApplication.class )
+Just clone the repository, make sure to create database(lms.sql script) and run the application
+(entry point of application : LmsApplication.class)
 
 To see the documentation of API http://{baseurl}:port/swagger-ui/index.html
 
